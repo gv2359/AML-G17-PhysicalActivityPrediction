@@ -46,4 +46,4 @@ Each algorithms and the techniques used in these algorithms are explained below:
 
 Here, We collect the model performance from each of the algorithms and pick the best model to be used with it's best hyperparameters.
 
-We train the model on the whole of the data (train + test) to train the final deployed model. 
+We train the model on the whole of the data (train + test) to get the final model to be deployed ( `deployed_model`). 
