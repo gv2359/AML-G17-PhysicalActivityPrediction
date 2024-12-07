@@ -13,7 +13,7 @@ Using this informatation, The raw data from various subjects are collected by ru
 
 ## Exploratory Data Analysis :
 
-We use the `compiled_raw_data.csv` data file to perform exploratory data analysis using `Exploratory_Data_Analysis.ipynb` python notebook.
+We use the `compiled_raw_data.csv` data file to perform exploratory data analysis using `Data_EDA_Cleanup.ipynb` python notebook.
 
 Here, We perform EDA and collect useful information from the data, and perform feature extraction using PCA (Principle Component Analysis) and other techniques. We remove the unnecessary columns and rows based on the exploratory analysis and store the final data as `final_data.csv` in the same folder
 
