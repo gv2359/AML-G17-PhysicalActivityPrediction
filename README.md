@@ -13,13 +13,19 @@ Using this informatation, The raw data from various subjects are collected by ru
 
 ## Exploratory Data Analysis :
 
-We use the `compiled_raw_data.csv` data file to perform exploratory data analysis using `EDA.ipynb` python notebook.
+We use the `compiled_raw_data.csv` data file to perform exploratory data analysis using `Exploratory_Data_Analysis.ipynb` python notebook.
 
 Here, We perform EDA and collect useful information from the data, and perform feature extraction using PCA (Principle Component Analysis) and other techniques. We remove the unnecessary columns and rows based on the exploratory analysis and store the final data as `final_data.csv` in the same folder
 
+This final data is normalized (standard) and the target data is label encoded. 
+
+Activity IDs are encoded and the mappings are : 
+
+`{0:'lying',1:'sitting',2:'standing',3:'walking',4:'running',5:'cycling',6:'nordic_walking',7:'ascending_stairs',8:'descending_stairs',9:'vacuum_cleaning',10:'ironing',11:'rope_jumping'}`
+
 ## Training and Evaluation:
 
-We use the `final_data.csv`, which has the final set of features and cleaned data to perform training on various machine learning algorithms.
+We use the `final_data.csv` from the folder `data`, which has the final set of features and cleaned data to perform training on various machine learning algorithms. The various training algorthms are trained in the python notebooks prefixed with 'Train_'.
 
 The machine learning algorithms that we train the data on includes :
 
@@ -42,8 +48,8 @@ Each algorithms and the techniques used in these algorithms are explained below:
 ### Deep Neural Networks
 
 
-## Deployment
+## Analysis
 
 Here, We collect the model performance from each of the algorithms and pick the best model to be used with it's best hyperparameters.
 
-We train the model on the whole of the data (train + test) to get the final model to be deployed ( `deployed_model`). 
+We finally get the final model to be deployed ( `deployed_model`). 
