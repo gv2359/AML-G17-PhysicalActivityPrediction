@@ -1,10 +1,28 @@
 # Physical Activity Prediction
 
+### Prerequisite : 
+
+Create a python virtual environment, activate the environment and execute the following command to install the dependencies: 
+
+`pip install -r requirements.txt`
+
+Create a folder in the root directory called `data` to store the dataset that is needed for the training.
+
+The following notebooks are the primary files to be used for the end-to-end Model building pipeline for this physical activity prediction dataset.
+ - `Data_Collection.ipynb`
+ - `Data_EDA_Cleanup.ipynb`
+ - `Model_Building_Evaluation_Combined.ipynb`
+
+ Other files prefixed with `Train_` are the draft notebook files that we used to experiment the individual algorithms on the dataset. 
+
+
+
 ## Data collection :
+
 
 The data that will be used is to be stored in the folder 'data' from the [dataset](https://archive.ics.uci.edu/dataset/231/pamap2+physical+activity+monitoring)
 
-These files should be dowloaded from the above link and stored in the data folder - 
+These files should be dowloaded from the above link and stored in the `data` folder - 
 `subject101.dat, subject102.dat, subject103.dat, subject104.dat, subject105.dat, subject106.dat, subject107.dat, subject108.dat, subject109.dat`
 
 Please refer to the readme.pdf and other docs in the 'data' folder for the data collection related information that was provided with the dataset.
@@ -25,7 +43,9 @@ Activity IDs are encoded and the mappings are :
 
 ## Training and Evaluation:
 
-We use the `final_data.csv` from the folder `data`, which has the final set of features and cleaned data to perform training on various machine learning algorithms. The various training algorthms are trained in the python notebooks prefixed with 'Train_'.
+We use the `final_data.csv` from the folder `data`, which has the final set of features and cleaned data to perform training on various machine learning algorithms. 
+
+Run the `Model_Building_Evaluation_Combined.ipynb` python notebook to train and evaluate the final set of models that we explored with the dataset.
 
 The machine learning algorithms that we train the data on includes :
 
@@ -35,21 +55,19 @@ The machine learning algorithms that we train the data on includes :
 - Support Vector Machines (SVM)
 - Deep Neural Networks
 
-Each algorithms and the techniques used in these algorithms are explained below:
 
-### Logitic Regression
+## Results
 
-### Decision Trees
+We collected the model performance from each of the algorithms and picked the best model to be used with it's best hyperparameters. Below are the performances for each models : 
 
-### Random Forests
+| Models                  | Testing Accuracies with best hyperparameters |
+| ----------------------- | -------------------------------------------- |
+| Logistic Regression     |       82.142 %                               |
+| Support Vector Machines |       99.53 %                                |
+| Decision Trees          |       86.29 %                                |
+| Random Forest           |       99.986 %                               |
+| XGBoost                 |       99.984 %                               |
+| Neural Network          |       99.31 %                                |
 
-### Support Vector Machines
 
-### Deep Neural Networks
-
-
-## Analysis
-
-Here, We collect the model performance from each of the algorithms and pick the best model to be used with it's best hyperparameters.
-
-We finally get the final model to be deployed ( `deployed_model`). 
+We can finally train the whole dataset (Train + Test) on this best model to get the final model to be deployed ( `deployed_model`). 
